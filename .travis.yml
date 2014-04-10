@@ -7,4 +7,4 @@ python:
 script:
   ##- python setup.py build_ext -i
   ##- python -m compileall -f .
-  - python math.py test
+  - python testing.py test
