@@ -22,7 +22,7 @@ def CountRows(dataset):
 		counter += 1
 	return counter
 
-print CountRows(batterysample)
+# print CountRows(batterysample)
 
 def SplitSemicolonValues(string):
 	newlist = string.split(";")
@@ -35,7 +35,6 @@ def CreateAttributeList(dataset):
 	return attributes
 
 attributelist = CreateAttributeList(batterysample)
-print attributelist
 
 # def CollectTemperature(dataset):
 # 	temp = "temperature"
