@@ -50,8 +50,14 @@ def ListMaker(valuelist, key):
 	return newlist
 
 templist = ListMaker(valuelist, "temperature")
+templist = map(int, templist)
 print templist
 
+def MeanCalc(list):
+	x = numpy.mean(list)
+	return int(x)
+
+print MeanCalc(templist)
 
 #Unit Test Classes
 
@@ -80,6 +86,11 @@ class ListMakerTests(unittest.TestCase):
 
 	def testOne(self):
 		self.assertEqual(ListMaker(valuelist, "nope"),[])
+
+class MeanCalcTests(unittest.TestCase):
+
+	def testOne(self):
+		self.assertEqual(MeanCalc(templist), 245)
 
 def main():
     unittest.main()
