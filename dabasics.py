@@ -42,6 +42,15 @@ valuelist = CleanAttList(attributelist)
 print valuelist
 print len(valuelist)
 
+def ListMaker(valuelist, key):
+	newlist = []
+	for item in valuelist:
+		if item[0] == key:
+			newlist.append(item[1])
+	return newlist
+
+templist = ListMaker(valuelist, "temperature")
+print templist
 
 
 #Unit Test Classes
@@ -51,7 +60,7 @@ class CountRowsTests(unittest.TestCase):
     def testOne(self):
         self.assertEqual(CountRows(batterysample), 36)
 
-class SplitSemicolonValuesTest(unittest.TestCase):
+class SplitSemicolonValuesTests(unittest.TestCase):
 
 	def testOne(self):
 		self.assertEqual(SplitSemicolonValues('voltage;4070'), ['voltage', '4070'])
@@ -59,13 +68,18 @@ class SplitSemicolonValuesTest(unittest.TestCase):
 	def testTwo(self):
 		self.assertEqual(SplitSemicolonValues(attributelist[2]), ['temperature', '272'])
 
-class CleanAttList(unittest.TestCase):
+class CleanAttListTests(unittest.TestCase):
 
 	def testOne(self):
 		self.assertTrue(len(valuelist), len(attributelist))
 
 	def testTwo(self):
 		self.assertTrue(valuelist[2], ['temperature', '272'])
+
+class ListMakerTests(unittest.TestCase):
+
+	def testOne(self):
+		self.assertEqual(ListMaker(valuelist, "nope"),[])
 
 def main():
     unittest.main()
