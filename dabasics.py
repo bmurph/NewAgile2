@@ -198,6 +198,9 @@ class TestDistance(unittest.TestCase):
 	def testDistanceShouldBeWrong(self):
 		self.assertNotEqual(6, distance(8, 3))
 
+	def testNegValuesStillWork(self):
+		self.assertEqual(5, distance(-8, -3))
+
 
 
 def main():
