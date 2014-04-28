@@ -190,6 +190,11 @@ class PickCentroids(unittest.TestCase):
 	def testShouldReturn2Values(self):
 		self.assertEqual(2, len(pick_centroids(templist, k)))
 
+class TestDistance(unittest.TestCase):
+
+	def testDistanceShouldBe5(self):
+		self.assertEqual(5, distance(8, 3))
+
 
 
 def main():
