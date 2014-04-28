@@ -195,6 +195,9 @@ class TestDistance(unittest.TestCase):
 	def testDistanceShouldBe5(self):
 		self.assertEqual(5, distance(8, 3))
 
+	def testDistanceShouldBeWrong(self):
+		self.assertNotEqual(6, distance(8, 3))
+
 
 
 def main():
